@@ -1,0 +1,136 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Dorognoe API",
+    "description": "This API provides a web interface for the Dorognoe radio station site. It allows users to access various features and data related to the radio station, such as city lists. The API is designed for integration with applications and services that require interaction with the Dorognoe platform.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/Dorognoe"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dorognoe.ru",
+      "description": "Dorognoe Radio Station API Server"
+    }
+  ],
+  "paths": {
+    "/api/cities": {
+      "get": {
+        "summary": "Get Cities List",
+        "description": "Retrieves a list of cities where the Dorognoe radio station is available or broadcasts.",
+        "operationId": "getCitiesList",
+        "tags": [
+          "Cities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of cities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "description": "Unique identifier for the city"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the city"
+                      },
+                      "region": {
+                        "type": "string",
+                        "description": "Region or area where the city is located"
+                      },
+                      "frequency": {
+                        "type": "string",
+                        "description": "Radio frequency for the city"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "citiesList": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "name": "Moscow",
+                        "region": "Moscow Oblast",
+                        "frequency": "101.7 FM"
+                      },
+                      {
+                        "id": 2,
+                        "name": "Saint Petersburg",
+                        "region": "Leningrad Oblast",
+                        "frequency": "102.5 FM"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "City": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the city"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the city"
+          },
+          "region": {
+            "type": "string",
+            "description": "Region or area where the city is located"
+          },
+          "frequency": {
+            "type": "string",
+            "description": "Radio frequency for the city"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Cities",
+      "description": "Operations related to city listings and radio station coverage"
+    }
+  ]
+}
