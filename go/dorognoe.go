@@ -1,10 +1,10 @@
 package voxgigdorognoesdk
 
 import (
-	"github.com/voxgig-sdk/dorognoe-sdk/core"
-	"github.com/voxgig-sdk/dorognoe-sdk/entity"
-	"github.com/voxgig-sdk/dorognoe-sdk/feature"
-	_ "github.com/voxgig-sdk/dorognoe-sdk/utility"
+	"github.com/voxgig-sdk/dorognoe-sdk/go/core"
+	"github.com/voxgig-sdk/dorognoe-sdk/go/entity"
+	"github.com/voxgig-sdk/dorognoe-sdk/go/feature"
+	_ "github.com/voxgig-sdk/dorognoe-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/dorognoe-sdk"
-	"github.com/voxgig-sdk/dorognoe-sdk/core"
+	sdk "github.com/voxgig-sdk/dorognoe-sdk/go"
+	"github.com/voxgig-sdk/dorognoe-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/dorognoe-sdk/go/utility/struct"
 )
 
 func TestCityEntity(t *testing.T) {

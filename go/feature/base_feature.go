@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/dorognoe-sdk/core"
+	"github.com/voxgig-sdk/dorognoe-sdk/go/core"
 )
 
 type BaseFeature struct {

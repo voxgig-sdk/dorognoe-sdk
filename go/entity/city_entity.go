@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/dorognoe-sdk/core"
+	"github.com/voxgig-sdk/dorognoe-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/dorognoe-sdk/go/utility/struct"
 )
 
 type CityEntity struct {

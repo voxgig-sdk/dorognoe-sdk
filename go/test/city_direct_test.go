@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/dorognoe-sdk"
-	"github.com/voxgig-sdk/dorognoe-sdk/core"
+	sdk "github.com/voxgig-sdk/dorognoe-sdk/go"
+	"github.com/voxgig-sdk/dorognoe-sdk/go/core"
 )
 
 func TestCityDirect(t *testing.T) {
