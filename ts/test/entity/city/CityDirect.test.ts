@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'DOROGNOE_TEST_CITY_ENTID': {},
     'DOROGNOE_TEST_LIVE': 'FALSE',
-    'DOROGNOE_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.DOROGNOE_TEST_LIVE
 
   if (live) {
     const client = new DorognoeSDK({
-      apikey: env.DOROGNOE_APIKEY,
     })
 
     let idmap: any = env['DOROGNOE_TEST_CITY_ENTID']

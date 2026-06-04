@@ -119,7 +119,6 @@ func cityBasicSetup(extra map[string]any) *entityTestSetup {
 		"DOROGNOE_TEST_CITY_ENTID": idmap,
 		"DOROGNOE_TEST_LIVE":      "FALSE",
 		"DOROGNOE_TEST_EXPLAIN":   "FALSE",
-		"DOROGNOE_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["DOROGNOE_TEST_CITY_ENTID"])
@@ -130,7 +129,6 @@ func cityBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["DOROGNOE_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["DOROGNOE_APIKEY"],
 			},
 			extra,
 		})

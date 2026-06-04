@@ -92,7 +92,6 @@ def _city_basic_setup(extra):
         "DOROGNOE_TEST_CITY_ENTID": idmap,
         "DOROGNOE_TEST_LIVE": "FALSE",
         "DOROGNOE_TEST_EXPLAIN": "FALSE",
-        "DOROGNOE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ def _city_basic_setup(extra):
     if env.get("DOROGNOE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOROGNOE_APIKEY"),
             },
             extra or {},
         ])
