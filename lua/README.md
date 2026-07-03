@@ -10,7 +10,7 @@ The Lua SDK for the Dorognoe API — an entity-oriented client using Lua convent
 
 ## Install
 ```bash
-luarocks install dorognoe-sdk
+luarocks install voxgig-sdk-dorognoe
 ```
 
 If the module is not yet published, add the source directory to

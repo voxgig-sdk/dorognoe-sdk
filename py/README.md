@@ -10,7 +10,7 @@ The Python SDK for the Dorognoe API — an entity-oriented client following Pyth
 
 ## Install
 ```bash
-pip install dorognoe-sdk
+pip install voxgig-sdk-dorognoe
 ```
 
 Or install from source:

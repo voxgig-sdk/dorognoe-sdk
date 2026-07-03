@@ -10,7 +10,7 @@ The TypeScript SDK for the Dorognoe API — a type-safe, entity-oriented client 
 
 ## Install
 ```bash
-npm install dorognoe
+npm install @voxgig-sdk/dorognoe
 ```
 ## Tutorial: your first API call
 

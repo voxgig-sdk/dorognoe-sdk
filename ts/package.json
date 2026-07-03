@@ -1,7 +1,23 @@
 {
   "name": "@voxgig-sdk/dorognoe",
   "version": "0.0.1",
-  "description": "DESCRIPTION",
+  "description": "Unofficial generated TypeScript SDK for the Dorognoe public API. Not affiliated with or endorsed by the upstream API provider.",
+  "keywords": [
+    "voxgig",
+    "sdk",
+    "generated-sdk",
+    "openapi",
+    "api-client",
+    "dorognoe"
+  ],
+  "homepage": "https://github.com/voxgig-sdk/dorognoe-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxgig-sdk/dorognoe-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voxgig-sdk/dorognoe-sdk/issues"
+  },
   "main": "dist/DorognoeSDK.js",
   "type": "commonjs",
   "types": "dist/DorognoeSDK.d.ts",
@@ -14,7 +30,10 @@
     "clean": "rm -rf node_modules yarn.lock package-lock.json",
     "reset": "npm run clean && npm i && npm run build && npm test"
   },
-  "author": "Dorognoe",
+  "author": {
+    "name": "Voxgig",
+    "url": "https://voxgig.com"
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {},

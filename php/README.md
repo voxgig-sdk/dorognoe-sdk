@@ -10,7 +10,7 @@ The PHP SDK for the Dorognoe API — an entity-oriented client using PHP convent
 
 ## Install
 ```bash
-composer require voxgig/dorognoe-sdk
+composer require voxgig-sdk/dorognoe
 ```
 
 

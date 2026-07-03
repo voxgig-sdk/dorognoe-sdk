@@ -10,13 +10,13 @@ The Ruby SDK for the Dorognoe API — an entity-oriented client using idiomatic 
 
 ## Install
 ```bash
-gem install dorognoe-sdk
+gem install voxgig-sdk-dorognoe
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "dorognoe-sdk"
+gem "voxgig-sdk-dorognoe"
 ```
 
 Then run:
