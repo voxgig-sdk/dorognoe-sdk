@@ -86,6 +86,7 @@ function city_basic_setup($extra)
         "DOROGNOE_TEST_CITY_ENTID" => $idmap,
         "DOROGNOE_TEST_LIVE" => "FALSE",
         "DOROGNOE_TEST_EXPLAIN" => "FALSE",
+        "DOROGNOE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function city_basic_setup($extra)
     if ($env["DOROGNOE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["DOROGNOE_APIKEY"],
             ],
             $extra ?? [],
         ]);

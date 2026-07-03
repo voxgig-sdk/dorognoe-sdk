@@ -63,12 +63,14 @@ function city_direct_setup(mockres)
   local env = runner.env_override({
     ["DOROGNOE_TEST_CITY_ENTID"] = {},
     ["DOROGNOE_TEST_LIVE"] = "FALSE",
+    ["DOROGNOE_APIKEY"] = "NONE",
   })
 
   local live = env["DOROGNOE_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["DOROGNOE_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

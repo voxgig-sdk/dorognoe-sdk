@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'DOROGNOE_TEST_CITY_ENTID': idmap,
     'DOROGNOE_TEST_LIVE': 'FALSE',
     'DOROGNOE_TEST_EXPLAIN': 'FALSE',
+    'DOROGNOE_APIKEY': 'NONE',
   })
 
   idmap = env['DOROGNOE_TEST_CITY_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new DorognoeSDK(merge([
       {
+        apikey: env.DOROGNOE_APIKEY,
       },
       extra
     ]))

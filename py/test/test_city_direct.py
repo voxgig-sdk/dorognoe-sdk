@@ -61,12 +61,14 @@ def _city_direct_setup(mockres):
     env = runner.env_override({
         "DOROGNOE_TEST_CITY_ENTID": {},
         "DOROGNOE_TEST_LIVE": "FALSE",
+        "DOROGNOE_APIKEY": "NONE",
     })
 
     live = env.get("DOROGNOE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("DOROGNOE_APIKEY"),
         }
         client = DorognoeSDK(merged_opts)
         return {

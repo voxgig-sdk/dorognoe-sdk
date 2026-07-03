@@ -93,12 +93,14 @@ func cityDirectSetup(mockres any) *cityDirectSetupResult {
 	env := envOverride(map[string]any{
 		"DOROGNOE_TEST_CITY_ENTID": map[string]any{},
 		"DOROGNOE_TEST_LIVE":    "FALSE",
+		"DOROGNOE_APIKEY":       "NONE",
 	})
 
 	live := env["DOROGNOE_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["DOROGNOE_APIKEY"],
 		}
 		client := sdk.NewDorognoeSDK(mergedOpts)
 

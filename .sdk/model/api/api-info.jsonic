@@ -16,22 +16,7 @@ main: {
       ]
       title: "Dorognoe API"
       version: "1.0.0"
-      tagline: "Web interface for the Russian radio station Dorognoe, exposing programme and city broadcast data"
-      homepage: "https://dorognoe.ru"
-      docs_url: "https://freepublicapis.com/dorognoe-api"
-      about_md: `[Dorognoe](https://dorognoe.ru) ("Дорожное Радио") is a Russian radio station broadcasting on 96.0 FM in Moscow and across 100+ cities throughout Russia. This SDK wraps the station's web-facing API at \`api.dorognoe.ru\`, which powers playlists, schedules and media on the public site.
-
-What you can pull from the API:
-
-- The broadcast programme / schedule (e.g. \`GET /api/program\`)
-- City listings for the station's multi-city FM footprint across Russia
-- Media assets such as cover images served from \`api.dorognoe.ru/images/...\`
-
-The endpoint is CORS-enabled and serves JSON over HTTPS. There is no formal public developer portal — the API is the same one used internally by the station's website, so field names and shapes can change without notice. All content (station name, programme metadata, imagery) belongs to the Dorognoe radio station; use it for client-side integrations rather than redistribution.`
-      entity_desc: {
-        city: "A broadcast city in the Dorognoe FM network — one of the 100+ Russian locations where the station is available on local frequencies."
-      }
-      auth: false
     }
   }
 }
+

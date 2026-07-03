@@ -1,20 +1,8 @@
 # Dorognoe SDK
 
-Web interface for the Russian radio station Dorognoe, exposing programme and city broadcast data
+Dorognoe API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Dorognoe API
-
-[Dorognoe](https://dorognoe.ru) ("Дорожное Радио") is a Russian radio station broadcasting on 96.0 FM in Moscow and across 100+ cities throughout Russia. This SDK wraps the station's web-facing API at `api.dorognoe.ru`, which powers playlists, schedules and media on the public site.
-
-What you can pull from the API:
-
-- The broadcast programme / schedule (e.g. `GET /api/program`)
-- City listings for the station's multi-city FM footprint across Russia
-- Media assets such as cover images served from `api.dorognoe.ru/images/...`
-
-The endpoint is CORS-enabled and serves JSON over HTTPS. There is no formal public developer portal — the API is the same one used internally by the station's website, so field names and shapes can change without notice. All content (station name, programme metadata, imagery) belongs to the Dorognoe radio station; use it for client-side integrations rather than redistribution.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install dorognoe-sdk
 luarocks install dorognoe-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { DorognoeSDK } from 'dorognoe'
 
-const client = new DorognoeSDK({})
+const client = new DorognoeSDK({
+  apikey: process.env.DOROGNOE_APIKEY,
+})
 
 // List all citys
 const citys = await client.City().list()
+console.log(citys.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **City** | A broadcast city in the Dorognoe FM network — one of the 100+ Russian locations where the station is available on local frequencies. | `/api/cities` |
+| **City** |  | `/api/cities` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from dorognoe_sdk import DorognoeSDK
 
-client = DorognoeSDK({})
+client = DorognoeSDK({
+    "apikey": os.environ.get("DOROGNOE_APIKEY"),
+})
 
 # List all citys
-citys, err = client.City(None).list(None, None)
+citys, err = client.City().list()
+print(citys)
 ```
 
 ### PHP
@@ -124,10 +118,13 @@ citys, err = client.City(None).list(None, None)
 <?php
 require_once 'dorognoe_sdk.php';
 
-$client = new DorognoeSDK([]);
+$client = new DorognoeSDK([
+    "apikey" => getenv("DOROGNOE_APIKEY"),
+]);
 
 // List all citys
-[$citys, $err] = $client->City(null)->list(null, null);
+[$citys, $err] = $client->City()->list();
+print_r($citys);
 ```
 
 ### Golang
@@ -135,10 +132,13 @@ $client = new DorognoeSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/dorognoe-sdk/go"
 
-client := sdk.NewDorognoeSDK(map[string]any{})
+client := sdk.NewDorognoeSDK(map[string]any{
+    "apikey": os.Getenv("DOROGNOE_APIKEY"),
+})
 
 // List all citys
 citys, err := client.City(nil).List(nil, nil)
+fmt.Println(citys)
 ```
 
 ### Ruby
@@ -146,10 +146,13 @@ citys, err := client.City(nil).List(nil, nil)
 ```ruby
 require_relative "Dorognoe_sdk"
 
-client = DorognoeSDK.new({})
+client = DorognoeSDK.new({
+  "apikey" => ENV["DOROGNOE_APIKEY"],
+})
 
 # List all citys
-citys, err = client.City(nil).list(nil, nil)
+citys, err = client.City().list
+puts citys
 ```
 
 ### Lua
@@ -157,10 +160,13 @@ citys, err = client.City(nil).list(nil, nil)
 ```lua
 local sdk = require("dorognoe_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("DOROGNOE_APIKEY"),
+})
 
 -- List all citys
-local citys, err = client:City(nil):list(nil, nil)
+local citys, err = client:City():list()
+print(citys)
 ```
 
 ## Unit testing in offline mode
@@ -179,25 +185,21 @@ const result = await client.City().load({ id: 'test01' })
 ### Python
 
 ```python
-client = DorognoeSDK.test(None, None)
-result, err = client.City(None).load(
-    {"id": "test01"}, None
-)
+client = DorognoeSDK.test()
+result, err = client.City().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = DorognoeSDK::test(null, null);
-[$result, $err] = $client->City(null)->load(
-    ["id" => "test01"], null
-);
+$client = DorognoeSDK::test();
+[$result, $err] = $client->City()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.City(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -206,19 +208,15 @@ result, err := client.City(nil).Load(
 ### Ruby
 
 ```ruby
-client = DorognoeSDK.test(nil, nil)
-result, err = client.City(nil).load(
-  { "id" => "test01" }, nil
-)
+client = DorognoeSDK.test
+result, err = client.City().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:City(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:City():load({ id = "test01" })
 ```
 
 ## How it works
@@ -322,11 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Dorognoe API
-
-- Upstream: [https://dorognoe.ru](https://dorognoe.ru)
-- API docs: [https://freepublicapis.com/dorognoe-api](https://freepublicapis.com/dorognoe-api)
 
 ---
 
