@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:city():list() / client:city():load({ id = ... })
+function DorognoeSDK:city(data)
+  local EntityMod = require("entity.city_entity")
+  if data == nil then
+    if self._city == nil then
+      self._city = EntityMod.new(self, nil)
+    end
+    return self._city
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:city() instead.
 function DorognoeSDK:City(data)
   local EntityMod = require("entity.city_entity")
   return EntityMod.new(self, data)

@@ -245,6 +245,9 @@ func (sdk *DorognoeSDK) Direct(fetchargs map[string]any) (map[string]any, error)
 }
 
 
+// City returns a City entity bound to this client.
+// Idiomatic usage: client.City(nil).List(nil, nil) or
+// client.City(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DorognoeSDK) City(data map[string]any) DorognoeEntity {
 	return NewCityEntityFunc(sdk, data)
 }

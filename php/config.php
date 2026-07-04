@@ -20,9 +20,6 @@ class DorognoeConfig
             ],
             "options" => [
                 "base" => "https://dorognoe.ru",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

@@ -2,6 +2,8 @@
 
 import { CityEntity } from './entity/CityEntity'
 
+export type * from './DorognoeTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class DorognoeSDK {
 
 
 
+  _city?: CityEntity
+
+  // Idiomatic facade: `client.city.list()` / `client.city.load({ id })`.
+  get city(): CityEntity {
+    return (this._city ??= new CityEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.city` instead. */
   City(data?: any) {
     const self = this
     return new CityEntity(self,data)

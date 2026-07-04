@@ -50,8 +50,7 @@ class TestCityEntity:
         city_ref01_ent = client.City(None)
         city_ref01_match = {}
 
-        city_ref01_list_result, err = city_ref01_ent.list(city_ref01_match, None)
-        assert err is None
+        city_ref01_list_result = city_ref01_ent.list(city_ref01_match, None)
         assert isinstance(city_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _city_basic_setup(extra):
         "DOROGNOE_TEST_CITY_ENTID": idmap,
         "DOROGNOE_TEST_LIVE": "FALSE",
         "DOROGNOE_TEST_EXPLAIN": "FALSE",
-        "DOROGNOE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _city_basic_setup(extra):
     if env.get("DOROGNOE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOROGNOE_APIKEY"),
             },
             extra or {},
         ])

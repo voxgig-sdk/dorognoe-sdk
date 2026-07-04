@@ -43,8 +43,7 @@ class CityEntityTest < Minitest::Test
     city_ref01_ent = client.City(nil)
     city_ref01_match = {}
 
-    city_ref01_list_result, err = city_ref01_ent.list(city_ref01_match, nil)
-    assert_nil err
+    city_ref01_list_result = city_ref01_ent.list(city_ref01_match, nil)
     assert city_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def city_basic_setup(extra)
     "DOROGNOE_TEST_CITY_ENTID" => idmap,
     "DOROGNOE_TEST_LIVE" => "FALSE",
     "DOROGNOE_TEST_EXPLAIN" => "FALSE",
-    "DOROGNOE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def city_basic_setup(extra)
   if env["DOROGNOE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOROGNOE_APIKEY"],
       },
       extra || {},
     ])
