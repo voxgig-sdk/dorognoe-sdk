@@ -204,14 +204,7 @@ class DorognoeSDK {
 
 
 
-  _city?: CityEntity
-
-  // Idiomatic facade: `client.city.list()` / `client.city.load({ id })`.
-  get city(): CityEntity {
-    return (this._city ??= new CityEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.city` instead. */
+  // Entity access: `client.City().list()` / `client.City().load({ id })`.
   City(data?: any) {
     const self = this
     return new CityEntity(self,data)

@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## CityEntity
 
 ```php
-$city = $client->city();
+$city = $client->City();
 ```
 
 ### Fields
@@ -104,7 +104,7 @@ $city = $client->city();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->city()->list([]);
+$results = $client->City()->list([]);
 ```
 
 ### Common Methods

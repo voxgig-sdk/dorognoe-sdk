@@ -220,25 +220,15 @@ class DorognoeSDK:
         }
 
 
-    @property
-    def city(self):
-        """Idiomatic facade: client.city.list() / client.city.load({"id": ...})."""
-        from entity.city_entity import CityEntity
-        cached = getattr(self, "_city", None)
-        if cached is None:
-            cached = CityEntity(self, None)
-            self._city = cached
-        return cached
-
-    def City(self, data=None):
-        # Deprecated: use client.city instead.
+    def City(self, data=None) -> "CityEntity":
+        """Entity factory: client.City().list({}) / client.City().load({"id": ...})."""
         from entity.city_entity import CityEntity
         return CityEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "DorognoeSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class DorognoeSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.city_entity import CityEntity

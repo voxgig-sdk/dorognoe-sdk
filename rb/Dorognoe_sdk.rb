@@ -208,13 +208,7 @@ class DorognoeSDK
   end
 
 
-  # Idiomatic facade: client.city.list / client.city.load({ "id" => ... })
-  def city
-    require_relative 'entity/city_entity'
-    @city ||= CityEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.city instead.
+  # Canonical facade: client.City.list / client.City.load({ "id" => ... })
   def City(data = nil)
     require_relative 'entity/city_entity'
     CityEntity.new(self, data)

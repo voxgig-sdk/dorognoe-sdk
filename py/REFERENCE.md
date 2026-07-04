@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## CityEntity
 
 ```python
-city = client.city
+city = client.City()
 ```
 
 ### Fields
@@ -99,7 +99,9 @@ city = client.city
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.city.list({})
+results = client.City().list({})
+for city in results:
+    print(city)
 ```
 
 ### Common Methods

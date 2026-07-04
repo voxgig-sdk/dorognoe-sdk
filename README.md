@@ -26,9 +26,11 @@ import { DorognoeSDK } from '@voxgig-sdk/dorognoe'
 
 const client = new DorognoeSDK()
 
-// List all citys
-const citys = await client.city.list()
-console.log(citys.data)
+// List all citys (returns City[])
+const citys = await client.City().list()
+for (const city of citys) {
+  console.log(city)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from dorognoe_sdk import DorognoeSDK
 
 client = DorognoeSDK()
 
-# List all citys
-citys = client.city.list()
-print(citys)
+# List all citys (returns a list, raises on error)
+citys = client.City().list({})
+for city in citys:
+    print(city)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'dorognoe_sdk.php';
 
 $client = new DorognoeSDK();
 
-// List all citys (throws on error)
-$citys = $client->city()->list();
+// List all citys (returns an array; throws on error)
+$citys = $client->City()->list();
 print_r($citys);
 ```
 
@@ -120,8 +123,8 @@ require_relative "Dorognoe_sdk"
 
 client = DorognoeSDK.new
 
-# List all citys
-citys = client.city.list
+# List all citys (returns an Array; raises on error)
+citys = client.City.list
 puts citys
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("dorognoe_sdk")
 local client = sdk.new()
 
 -- List all citys
-local citys, err = client:city():list()
+local citys, err = client:City():list()
 print(citys)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = DorognoeSDK.test()
-const result = await client.city.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const city = await client.City().load({ id: 1 })
+// city is a bare City populated with mock data
+console.log(city)
 ```
 
 ### Python
 
 ```python
 client = DorognoeSDK.test()
-result = client.city.load({"id": "test01"})
+city = client.City().load({"id": "test01"})
+print(city)
 ```
 
 ### PHP
 
 ```php
-$client = DorognoeSDK::test();
-$result = $client->city()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = DorognoeSDK::test([
+    "entity" => ["city" => ["test01" => ["id" => "test01"]]],
+]);
+$city = $client->City()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.City(nil).Load(
 ### Ruby
 
 ```ruby
-client = DorognoeSDK.test
-result = client.city.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = DorognoeSDK.test({
+  "entity" => { "city" => { "test01" => { "id" => "test01" } } },
+})
+city = client.City.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:city():load({ id = "test01" })
+local result, err = client:City():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

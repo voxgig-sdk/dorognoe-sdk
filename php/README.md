@@ -29,18 +29,16 @@ require_once 'dorognoe_sdk.php';
 $client = new DorognoeSDK();
 ```
 
-### 2. List citys
+### 2. List city records
 
 ```php
 try {
-    $result = $client->city()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of City records — iterate directly.
+    $citys = $client->City()->list();
+    foreach ($citys as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = DorognoeSDK::test();
+$client = DorognoeSDK::test([
+    "entity" => ["city" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->city()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$city = $client->City()->load(["id" => "test01"]);
+print_r($city);
 ```
 
 ### Use a custom fetch function
@@ -231,7 +233,7 @@ API path: `/api/cities`
 
 ### City
 
-Create an instance: `const city = client.city`
+Create an instance: `$city = $client->City();`
 
 #### Operations
 
@@ -250,8 +252,9 @@ Create an instance: `const city = client.city`
 
 #### Example: List
 
-```ts
-const citys = await client.city.list()
+```php
+// list() returns an array of City records (throws on error).
+$citys = $client->City()->list();
 ```
 
 
@@ -326,7 +329,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$city = $client->city();
+$city = $client->City();
 $city->load(["id" => "example_id"]);
 
 // $city->dataGet() now returns the loaded city data

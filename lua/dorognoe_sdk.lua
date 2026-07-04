@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:city():list() / client:city():load({ id = ... })
-function DorognoeSDK:city(data)
+-- Idiomatic facade: client:City():list() / client:City():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DorognoeSDK:City(data)
   local EntityMod = require("entity.city_entity")
   if data == nil then
     if self._city == nil then
@@ -253,12 +254,6 @@ function DorognoeSDK:city(data)
     end
     return self._city
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:city() instead.
-function DorognoeSDK:City(data)
-  local EntityMod = require("entity.city_entity")
   return EntityMod.new(self, data)
 end
 

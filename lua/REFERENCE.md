@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## CityEntity
 
 ```lua
-local city = client:city(nil)
+local city = client:City(nil)
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ local city = client:city(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:city():list()
+local results, err = client:City():list()
 ```
 
 ### Common Methods

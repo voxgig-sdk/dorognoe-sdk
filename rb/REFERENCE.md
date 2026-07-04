@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## CityEntity
 
 ```ruby
-city = client.city
+city = client.City
 ```
 
 ### Fields
@@ -105,7 +105,7 @@ city = client.city
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.city.list(nil)
+results = client.City.list(nil)
 ```
 
 ### Common Methods

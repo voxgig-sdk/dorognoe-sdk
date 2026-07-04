@@ -109,7 +109,7 @@ Alias for `DorognoeSDK.test()`.
 ## CityEntity
 
 ```ts
-const city = client.city
+const city = client.City()
 ```
 
 ### Fields
@@ -128,7 +128,7 @@ const city = client.city
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.city.list()
+const results = await client.City().list()
 ```
 
 ### Common Methods

@@ -28,16 +28,14 @@ require_relative "Dorognoe_sdk"
 client = DorognoeSDK.new
 ```
 
-### 2. List citys
+### 2. List city records
 
 ```ruby
 begin
-  result = client.city.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of City records — iterate directly.
+  citys = client.City.list
+  citys.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = DorognoeSDK.test
+client = DorognoeSDK.test({
+  "entity" => { "city" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.city.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+city = client.City.load({ "id" => "test01" })
+puts city
 ```
 
 ### Use a custom fetch function
@@ -226,7 +228,7 @@ API path: `/api/cities`
 
 ### City
 
-Create an instance: `const city = client.city`
+Create an instance: `city = client.City`
 
 #### Operations
 
@@ -245,8 +247,9 @@ Create an instance: `const city = client.city`
 
 #### Example: List
 
-```ts
-const citys = await client.city.list()
+```ruby
+# list returns an Array of City records (raises on error).
+citys = client.City.list
 ```
 
 
@@ -321,7 +324,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-city = client.city
+city = client.City
 city.load({ "id" => "example_id" })
 
 # city.data_get now returns the loaded city data

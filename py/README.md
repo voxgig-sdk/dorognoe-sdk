@@ -31,14 +31,16 @@ from dorognoe_sdk import DorognoeSDK
 client = DorognoeSDK()
 ```
 
-### 2. List citys
+### 2. List city records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.city.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    citys = client.City().list({})
+    for city in citys:
+        print(city)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = DorognoeSDK.test()
 
-result = client.city.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+city = client.City().load({"id": "test01"})
+# city contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -223,7 +226,7 @@ API path: `/api/cities`
 
 ### City
 
-Create an instance: `const city = client.city`
+Create an instance: `city = client.City()`
 
 #### Operations
 
@@ -242,8 +245,8 @@ Create an instance: `const city = client.city`
 
 #### Example: List
 
-```ts
-const citys = await client.city.list()
+```python
+citys = client.City().list({})
 ```
 
 
@@ -317,7 +320,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-city = client.city
+city = client.City()
 city.load({"id": "example_id"})
 
 # city.data_get() now returns the loaded city data
