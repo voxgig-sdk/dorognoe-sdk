@@ -13,6 +13,10 @@
 ---@field region? string
 
 ---@class CityListMatch
+---@field frequency? string
+---@field id? number
+---@field name? string
+---@field region? string
 
 local M = {}
 

@@ -97,10 +97,10 @@ city := client.City(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `frequency` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `region` | ``$STRING`` | No |  |
+| `frequency` | `string` | No |  |
+| `id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `region` | `string` | No |  |
 
 ### Operations
 

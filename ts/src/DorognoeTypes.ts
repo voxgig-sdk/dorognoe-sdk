@@ -12,5 +12,10 @@ export interface City {
   region?: string
 }
 
-export type CityListMatch = Partial<City>
+export interface CityListMatch {
+  frequency?: string
+  id?: number
+  name?: string
+  region?: string
+}
 

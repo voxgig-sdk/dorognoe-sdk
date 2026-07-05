@@ -16,8 +16,7 @@ type City struct {
 	Region *string `json:"region,omitempty"`
 }
 
-// CityListMatch mirrors the city fields as an all-optional match
-// filter (Go analog of Partial<City>).
+// CityListMatch is the typed request payload for City.ListTyped.
 type CityListMatch struct {
 	Frequency *string `json:"frequency,omitempty"`
 	Id *int `json:"id,omitempty"`

@@ -87,19 +87,19 @@ city = client.City()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `frequency` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `region` | ``$STRING`` | No |  |
+| `frequency` | `str` | No |  |
+| `id` | `int` | No |  |
+| `name` | `str` | No |  |
+| `region` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.City().list({})
+results = client.City().list()
 for city in results:
     print(city)
 ```

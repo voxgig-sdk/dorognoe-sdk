@@ -21,7 +21,7 @@ class City
     public ?string $region = null;
 }
 
-/** Match filter for City#list (any subset of City fields). */
+/** Request payload for City#list. */
 class CityListMatch
 {
     public ?string $frequency = null;

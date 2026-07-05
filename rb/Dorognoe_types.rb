@@ -29,7 +29,7 @@ City = Struct.new(
   keyword_init: true
 )
 
-# Match filter for City#list (any subset of City fields).
+# Request payload for City#list.
 #
 # @!attribute [rw] frequency
 #   @return [String, nil]
