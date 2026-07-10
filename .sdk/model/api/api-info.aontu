@@ -15,9 +15,9 @@ main: {
           url: "https://dorognoe.ru"
         }
       ]
+      summary: "This API provides a web interface for the Dorognoe radio station site."
       title: "Dorognoe API"
       version: "1.0.0"
+      website: "https://dorognoe.ru"
     }
   }
-}
-

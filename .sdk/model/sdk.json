@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -213,14 +210,17 @@
           "url": "https://github.com/l0v3m0n3y/Dorognoe"
         },
         "description": "This API provides a web interface for the Dorognoe radio station site. It allows users to access various features and data related to the radio station, such as city lists. The API is designed for integration with applications and services that require interaction with the Dorognoe platform.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Dorognoe Radio Station API Server",
             "url": "https://dorognoe.ru"
           }
         ],
+        "summary": "This API provides a web interface for the Dorognoe radio station site.",
         "title": "Dorognoe API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://dorognoe.ru"
       },
       "option": {},
       "target": {
@@ -273,6 +273,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -323,6 +326,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
