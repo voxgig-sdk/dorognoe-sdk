@@ -37,7 +37,20 @@ func main() {
 	addr := flag.String("addr", ":8080", "listen address for http transport")
 	flag.Parse()
 
-	client := sdk.NewDorognoeSDK(nil)
+	// Configure from the environment: DOROGNOE_APIKEY carries the API key and
+	// DOROGNOE_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("DOROGNOE_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("DOROGNOE_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewDorognoeSDK(opts)
 	server := mcp.NewServer(
 		&mcp.Implementation{
 			Name:    "dorognoe",
