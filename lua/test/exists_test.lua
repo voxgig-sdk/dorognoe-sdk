@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Dorognoe SDK exists test
 
 local sdk = require("dorognoe_sdk")
 
