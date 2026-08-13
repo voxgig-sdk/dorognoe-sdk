@@ -37,7 +37,7 @@ class CityEntity extends DorognoeEntityBase<City> {
 
 
 
-  async list(this: any, reqmatch?: CityListMatch, ctrl?: Control): Promise<City[]> {
+  async list(this: any, reqmatch?: CityListMatch, ctrl?: Control): Promise<CityEntity[]> {
 
     const utility = this._utility
 

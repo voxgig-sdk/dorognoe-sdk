@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local city, err = client:City():load()
+    local city, err = client:City():list()
     if err then error(err) end
-    -- city is the loaded record
+    -- city is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.

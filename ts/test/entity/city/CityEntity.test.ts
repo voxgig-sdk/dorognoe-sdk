@@ -63,7 +63,7 @@ describe('CityEntity', async () => {
     const city_ref01_ent = client.City()
     const city_ref01_match: any = {}
 
-    const city_ref01_list = await city_ref01_ent.list(city_ref01_match)
+    const city_ref01_list = (await city_ref01_ent.list(city_ref01_match)).map((e: any) => e.data())
 
 
   })

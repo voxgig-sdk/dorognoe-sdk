@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ DorognoeUtility.registrar = ->(u) {
   u.prepare_params = DorognoeUtilities::PrepareParams
   u.prepare_path = DorognoeUtilities::PreparePath
   u.prepare_query = DorognoeUtilities::PrepareQuery
+  u.graphql_body = DorognoeUtilities::GraphqlBody
+  u.graphql_errors = DorognoeUtilities::GraphqlErrors
   u.result_basic = DorognoeUtilities::ResultBasic
   u.result_body = DorognoeUtilities::ResultBody
   u.result_headers = DorognoeUtilities::ResultHeaders

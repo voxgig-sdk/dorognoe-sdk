@@ -16,11 +16,11 @@
 import pytest
 
 from dorognoe_sdk import DorognoeSDK
-from core.error import DorognoeError
-from core.result import DorognoeResult
-from core.response import DorognoeResponse
-from core.spec import DorognoeSpec
-from feature.base_feature import DorognoeBaseFeature
+from dorognoe_sdk.core.error import DorognoeError
+from dorognoe_sdk.core.result import DorognoeResult
+from dorognoe_sdk.core.response import DorognoeResponse
+from dorognoe_sdk.core.spec import DorognoeSpec
+from dorognoe_sdk.feature.base_feature import DorognoeBaseFeature
 
 
 def _client():

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from dorognoe_sdk.utility.voxgig_struct import voxgig_struct as vs
 from dorognoe_sdk import DorognoeSDK
-from core import helpers
+from dorognoe_sdk.core import helpers
 from test import runner
 
 

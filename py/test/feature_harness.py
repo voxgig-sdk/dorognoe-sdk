@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import DorognoeControl
-from core.error import DorognoeError
-from core.result import DorognoeResult
-from core.spec import DorognoeSpec
+from dorognoe_sdk.config import make_config
+from dorognoe_sdk.features import _make_feature
+from dorognoe_sdk.core.control import DorognoeControl
+from dorognoe_sdk.core.error import DorognoeError
+from dorognoe_sdk.core.result import DorognoeResult
+from dorognoe_sdk.core.spec import DorognoeSpec
 
 
 # True when this SDK was generated with the named feature.

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Dorognoe SDK exists test
 
 import pytest
 from dorognoe_sdk import DorognoeSDK

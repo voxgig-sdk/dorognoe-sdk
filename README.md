@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = DorognoeSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = DorognoeSDK.test({
+  entity: {
+    city: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const citys = await client.City().list()
-// citys is an array of bare City records populated with mock data
+// citys is an array of City entities, populated with mock data
+// — call citys[0].data() for the record itself
 console.log(citys)
 ```
 
@@ -110,7 +119,7 @@ import { DorognoeSDK } from '@voxgig-sdk/dorognoe'
 
 const client = new DorognoeSDK()
 
-// List all citys (returns City[])
+// List all citys (returns CityEntity[] — .data() for the record)
 const citys = await client.City().list()
 for (const city of citys) {
   console.log(city)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/l0v3m0n3y/Dorognoe](https://github.com/l0v3m0n3y/Dorognoe)
 

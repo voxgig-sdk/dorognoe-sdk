@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ DorognoeUtility::setRegistrar(function (DorognoeUtility $u): void {
     $u->prepare_params = [DorognoePrepareParams::class, 'call'];
     $u->prepare_path = [DorognoePreparePath::class, 'call'];
     $u->prepare_query = [DorognoePrepareQuery::class, 'call'];
+    $u->graphql_body = [DorognoeGraphql::class, 'body'];
+    $u->graphql_errors = [DorognoeGraphql::class, 'errors'];
     $u->result_basic = [DorognoeResultBasic::class, 'call'];
     $u->result_body = [DorognoeResultBody::class, 'call'];
     $u->result_headers = [DorognoeResultHeaders::class, 'call'];

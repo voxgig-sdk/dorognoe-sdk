@@ -63,6 +63,7 @@ module DorognoeConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/cities",
                   "parts" => [
