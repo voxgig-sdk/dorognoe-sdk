@@ -15,7 +15,7 @@ require_relative "../Dorognoe_sdk"
 module DorognoeFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = DorognoeConfig.make_config["feature"]
+    f = DorognoeConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

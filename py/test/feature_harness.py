@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from dorognoe_sdk.config import make_config
+from dorognoe_sdk.config import shared_config
 from dorognoe_sdk.features import _make_feature
 from dorognoe_sdk.core.control import DorognoeControl
 from dorognoe_sdk.core.error import DorognoeError
@@ -24,7 +24,7 @@ from dorognoe_sdk.core.spec import DorognoeSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

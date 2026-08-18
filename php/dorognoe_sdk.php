@@ -40,7 +40,7 @@ class DorognoeSDK
         $utility = new DorognoeUtility();
         $this->_utility = $utility;
 
-        $config = DorognoeConfig::make_config();
+        $config = DorognoeConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

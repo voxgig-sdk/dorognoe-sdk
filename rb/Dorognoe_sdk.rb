@@ -28,7 +28,7 @@ class DorognoeSDK
     utility = DorognoeUtility.new
     @_utility = utility
 
-    config = DorognoeConfig.make_config
+    config = DorognoeConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
