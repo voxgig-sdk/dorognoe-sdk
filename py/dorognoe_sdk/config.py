@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Dorognoe",
+            "slug": "dorognoe",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,18 +53,22 @@ def make_config():
         "fields": [
           {
             "name": "frequency",
+            "short": "Radio frequency for the city",
             "type": "`$STRING`",
           },
           {
             "name": "id",
+            "short": "Unique identifier for the city",
             "type": "`$INTEGER`",
           },
           {
             "name": "name",
+            "short": "Name of the city",
             "type": "`$STRING`",
           },
           {
             "name": "region",
+            "short": "Region or area where the city is located",
             "type": "`$STRING`",
           },
         ],

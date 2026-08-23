@@ -8,21 +8,25 @@ main: kit: entity: city: {
     {
       name: "frequency"
       req: false
+      short: "Radio frequency for the city"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the city"
       type: "`$INTEGER`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the city"
       type: "`$STRING`"
     }
     {
       name: "region"
       req: false
+      short: "Region or area where the city is located"
       type: "`$STRING`"
     }
   ]

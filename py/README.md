@@ -243,10 +243,10 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `frequency` |  |
-| `id` |  |
-| `name` |  |
-| `region` |  |
+| `frequency` | Radio frequency for the city |
+| `id` | Unique identifier for the city |
+| `name` | Name of the city |
+| `region` | Region or area where the city is located |
 
 Operations: List.
 
@@ -271,10 +271,10 @@ Create an instance: `city = client.City()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `frequency` | `str` |  |
-| `id` | `int` |  |
-| `name` | `str` |  |
-| `region` | `str` |  |
+| `frequency` | `str` | Radio frequency for the city |
+| `id` | `int` | Unique identifier for the city |
+| `name` | `str` | Name of the city |
+| `region` | `str` | Region or area where the city is located |
 
 #### Example: List
 

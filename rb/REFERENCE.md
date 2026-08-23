@@ -93,10 +93,10 @@ city = client.City
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `frequency` | `String` | No |  |
-| `id` | `Integer` | No |  |
-| `name` | `String` | No |  |
-| `region` | `String` | No |  |
+| `frequency` | `String` | No | Radio frequency for the city |
+| `id` | `Integer` | No | Unique identifier for the city |
+| `name` | `String` | No | Name of the city |
+| `region` | `String` | No | Region or area where the city is located |
 
 ### Operations
 

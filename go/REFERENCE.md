@@ -98,10 +98,10 @@ fmt.Println(city.GetName()) // "city"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `frequency` | `string` | No |  |
-| `id` | `int` | No |  |
-| `name` | `string` | No |  |
-| `region` | `string` | No |  |
+| `frequency` | `string` | No | Radio frequency for the city |
+| `id` | `int` | No | Unique identifier for the city |
+| `name` | `string` | No | Name of the city |
+| `region` | `string` | No | Region or area where the city is located |
 
 ### Operations
 

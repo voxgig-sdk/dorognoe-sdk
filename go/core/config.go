@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Dorognoe",
+			"slug": "dorognoe",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,18 +36,22 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "frequency",
+						"short": "Radio frequency for the city",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the city",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the city",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "region",
+						"short": "Region or area where the city is located",
 						"type": "`$STRING`",
 					},
 				},

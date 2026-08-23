@@ -36,24 +36,28 @@
               "active": true,
               "name": "frequency",
               "req": false,
+              "short": "Radio frequency for the city",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the city",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the city",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "region",
               "req": false,
+              "short": "Region or area where the city is located",
               "type": "`$STRING`"
             }
           ],

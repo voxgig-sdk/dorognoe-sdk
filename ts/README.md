@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,10 +287,10 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `frequency` |  |
-| `id` |  |
-| `name` |  |
-| `region` |  |
+| `frequency` | Radio frequency for the city |
+| `id` | Unique identifier for the city |
+| `name` | Name of the city |
+| `region` | Region or area where the city is located |
 
 Operations: list.
 
@@ -315,10 +315,10 @@ Create an instance: `const city = client.City()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `frequency` | `string` |  |
-| `id` | `number` |  |
-| `name` | `string` |  |
-| `region` | `string` |  |
+| `frequency` | `string` | Radio frequency for the city |
+| `id` | `number` | Unique identifier for the city |
+| `name` | `string` | Name of the city |
+| `region` | `string` | Region or area where the city is located |
 
 #### Example: List
 

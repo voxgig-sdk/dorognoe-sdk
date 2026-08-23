@@ -90,10 +90,10 @@ local city = client:City(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `frequency` | `string` | No |  |
-| `id` | `number` | No |  |
-| `name` | `string` | No |  |
-| `region` | `string` | No |  |
+| `frequency` | `string` | No | Radio frequency for the city |
+| `id` | `number` | No | Unique identifier for the city |
+| `name` | `string` | No | Name of the city |
+| `region` | `string` | No | Region or area where the city is located |
 
 ### Operations
 

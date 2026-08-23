@@ -237,10 +237,10 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `frequency` |  |
-| `id` |  |
-| `name` |  |
-| `region` |  |
+| `frequency` | Radio frequency for the city |
+| `id` | Unique identifier for the city |
+| `name` | Name of the city |
+| `region` | Region or area where the city is located |
 
 Operations: List.
 
@@ -265,10 +265,10 @@ Create an instance: `city = client.City`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `frequency` | `String` |  |
-| `id` | `Integer` |  |
-| `name` | `String` |  |
-| `region` | `String` |  |
+| `frequency` | `String` | Radio frequency for the city |
+| `id` | `Integer` | Unique identifier for the city |
+| `name` | `String` | Name of the city |
+| `region` | `String` | Region or area where the city is located |
 
 #### Example: List
 

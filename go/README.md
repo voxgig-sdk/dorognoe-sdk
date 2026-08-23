@@ -6,7 +6,7 @@ The Golang SDK for the Dorognoe API — an entity-oriented client using standard
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.City(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,10 +260,10 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"frequency"` |  |
-| `"id"` |  |
-| `"name"` |  |
-| `"region"` |  |
+| `"frequency"` | Radio frequency for the city |
+| `"id"` | Unique identifier for the city |
+| `"name"` | Name of the city |
+| `"region"` | Region or area where the city is located |
 
 Operations: List.
 
@@ -288,10 +288,10 @@ Create an instance: `city := client.City(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `frequency` | `string` |  |
-| `id` | `int` |  |
-| `name` | `string` |  |
-| `region` | `string` |  |
+| `frequency` | `string` | Radio frequency for the city |
+| `id` | `int` | Unique identifier for the city |
+| `name` | `string` | Name of the city |
+| `region` | `string` | Region or area where the city is located |
 
 #### Example: List
 

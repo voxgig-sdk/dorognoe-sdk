@@ -231,10 +231,10 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `frequency` |  |
-| `id` |  |
-| `name` |  |
-| `region` |  |
+| `frequency` | Radio frequency for the city |
+| `id` | Unique identifier for the city |
+| `name` | Name of the city |
+| `region` | Region or area where the city is located |
 
 Operations: List.
 
@@ -259,10 +259,10 @@ Create an instance: `local city = client:City(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `frequency` | `string` |  |
-| `id` | `number` |  |
-| `name` | `string` |  |
-| `region` | `string` |  |
+| `frequency` | `string` | Radio frequency for the city |
+| `id` | `number` | Unique identifier for the city |
+| `name` | `string` | Name of the city |
+| `region` | `string` | Region or area where the city is located |
 
 #### Example: List
 

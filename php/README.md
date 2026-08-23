@@ -247,10 +247,10 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `frequency` |  |
-| `id` |  |
-| `name` |  |
-| `region` |  |
+| `frequency` | Radio frequency for the city |
+| `id` | Unique identifier for the city |
+| `name` | Name of the city |
+| `region` | Region or area where the city is located |
 
 Operations: List.
 
@@ -275,10 +275,10 @@ Create an instance: `$city = $client->City();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `frequency` | `string` |  |
-| `id` | `int` |  |
-| `name` | `string` |  |
-| `region` | `string` |  |
+| `frequency` | `string` | Radio frequency for the city |
+| `id` | `int` | Unique identifier for the city |
+| `name` | `string` | Name of the city |
+| `region` | `string` | Region or area where the city is located |
 
 #### Example: List
 

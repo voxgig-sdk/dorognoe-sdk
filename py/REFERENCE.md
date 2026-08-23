@@ -87,10 +87,10 @@ city = client.City()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `frequency` | `str` | No |  |
-| `id` | `int` | No |  |
-| `name` | `str` | No |  |
-| `region` | `str` | No |  |
+| `frequency` | `str` | No | Radio frequency for the city |
+| `id` | `int` | No | Unique identifier for the city |
+| `name` | `str` | No | Name of the city |
+| `region` | `str` | No | Region or area where the city is located |
 
 ### Operations
 
