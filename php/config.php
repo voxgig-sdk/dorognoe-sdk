@@ -42,6 +42,7 @@ class DorognoeConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
