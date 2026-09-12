@@ -44,9 +44,13 @@ main: kit: entity: city: {
         {
           method: "GET"
           orig: "/api/cities"
-          parts: [
-            "api"
-            "cities"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "cities"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -78,6 +78,10 @@ class DorognoeConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'city',
           'op' => [
             'list' => [
@@ -89,14 +93,22 @@ class DorognoeConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/cities',
-                  'parts' => [
-                    'api',
-                    'cities',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'cities',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'cities',
                   ],
                 ],
               ],
