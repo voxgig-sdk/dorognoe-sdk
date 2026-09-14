@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { DorognoeSDK } from '@voxgig-sdk/dorognoe'
+import { DorognoeSDK } from '@voxgig-sdk/dorognoe-sdk'
 
 const client = new DorognoeSDK()
 ```
@@ -409,7 +409,7 @@ dorognoe/
 Import the SDK from the package root:
 
 ```ts
-import { DorognoeSDK } from '@voxgig-sdk/dorognoe'
+import { DorognoeSDK } from '@voxgig-sdk/dorognoe-sdk'
 ```
 
 ### Entity state

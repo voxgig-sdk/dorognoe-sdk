@@ -105,7 +105,7 @@ local results, err = client:City():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/dorognoe` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dorognoe-sdk/releases) |
+| TypeScript | `@voxgig-sdk/dorognoe-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dorognoe-sdk/releases) |
 | Python | `voxgig-sdk-dorognoe` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dorognoe-sdk/releases) |
 | PHP | `voxgig-sdk/dorognoe` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dorognoe-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/dorognoe-sdk/go` | `go get github.com/voxgig-sdk/dorognoe-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:City():list()
 ### TypeScript
 
 ```ts
-import { DorognoeSDK } from '@voxgig-sdk/dorognoe'
+import { DorognoeSDK } from '@voxgig-sdk/dorognoe-sdk'
 
 const client = new DorognoeSDK()
 
