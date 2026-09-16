@@ -42,6 +42,12 @@ main: kit: entity: city: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /api/cities"
+            json: "{\"operationId\":\"getCitiesList\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"examples\":{\"citiesList\":{\"value\":[{\"frequency\":\"101.7 FM\",\"id\":1,\"name\":\"Moscow\",\"region\":\"Moscow Oblast\"},{\"frequency\":\"102.5 FM\",\"id\":2,\"name\":\"Saint Petersburg\",\"region\":\"Leningrad Oblast\"}]}},\"schema\":{\"items\":{\"properties\":{\"frequency\":{\"description\":\"Radio frequency for the city\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the city\",\"type\":\"integer\"},\"name\":{\"description\":\"Name of the city\",\"type\":\"string\"},\"region\":{\"description\":\"Region or area where the city is located\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response with list of cities\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/api/cities"
           segments: [

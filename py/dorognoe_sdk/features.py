@@ -1,12 +1,18 @@
 # Dorognoe SDK feature factory
 
 from dorognoe_sdk.feature.base_feature import DorognoeBaseFeature
+from dorognoe_sdk.feature.ratelimit_feature import DorognoeRatelimitFeature
+from dorognoe_sdk.feature.retry_feature import DorognoeRetryFeature
 from dorognoe_sdk.feature.test_feature import DorognoeTestFeature
+from dorognoe_sdk.feature.timeout_feature import DorognoeTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: DorognoeBaseFeature(),
+    "ratelimit": lambda: DorognoeRatelimitFeature(),
+    "retry": lambda: DorognoeRetryFeature(),
     "test": lambda: DorognoeTestFeature(),
+    "timeout": lambda: DorognoeTimeoutFeature(),
 }
 
 
